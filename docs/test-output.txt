@@ -1,0 +1,44 @@
+WARNING: `anchor-lang` version(0.31.1) and the current CLI version(1.2.1) don't match.
+
+	This can lead to unwanted behavior. To use the same CLI version, add:
+
+	[toolchain]
+	anchor_version = "0.31.1"
+
+	to Anchor.toml
+
+    Finished `release` profile [optimized] target(s) in 0.26s
+   Compiling anchor-core-staking v0.1.0 (/Users/vkit/Projects/mine/solana/nft-staking-core/programs/anchor-core-staking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.04s
+     Running unittests src/lib.rs (/Users/vkit/Projects/mine/solana/nft-staking-core/target/debug/deps/anchor_core_staking-60a0542a6f3afbda)
+     Running tests/integration.rs (/Users/vkit/Projects/mine/solana/nft-staking-core/target/debug/deps/integration-88fd445cec5fb135)
+
+Found a 'test' script in the Anchor.toml. Running it as a test suite!
+
+Running test suite: "/Users/vkit/Projects/mine/solana/nft-staking-core/Anchor.toml"
+
+   Compiling anchor-core-staking v0.1.0 (/Users/vkit/Projects/mine/solana/nft-staking-core/programs/anchor-core-staking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.46s
+     Running tests/integration.rs (target/debug/deps/integration-930cffcc0d44f8d6)
+
+running 17 tests
+test create_collection_adds_stats_and_oracle_adapter ... ok
+test initialize_sets_config_and_rewards_mint ... ok
+test mint_asset_creates_asset_in_collection ... ok
+test oracle_account_matches_core_layout ... ok
+test oracle_crank_still_flips_when_vault_is_empty ... ok
+test burn_staked_nft_rejects_unstaked_asset ... ok
+test oracle_crank_flips_at_boundaries_and_pays_only_near_them ... ok
+test claim_rewards_pays_full_days_and_keeps_asset_staked ... ok
+test claim_rewards_rejects_non_owner_and_unstaked_asset ... ok
+test burn_staked_nft_pays_bonus_and_burns ... ok
+test transfer_nft_fails_outside_window ... ok
+test stake_freezes_asset_sets_attributes_and_counts ... ok
+test stake_rejects_non_owner_and_double_stake ... ok
+test staked_asset_cannot_be_transferred_even_in_window ... ok
+test transfer_nft_succeeds_inside_window ... ok
+test unstake_enforces_freeze_period_from_original_stake ... ok
+test unstake_thaws_removes_delegates_and_decrements ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.22s
+
