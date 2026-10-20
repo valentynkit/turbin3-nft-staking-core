@@ -16,4 +16,10 @@ pub enum ErrorCode {
     FreezePeriodNotElapsed,
     #[msg("Invalid rewards bps")]
     InvalidRewardsBps,
+    #[msg("No rewards to claim yet")]
+    NothingToClaim,
+    #[msg("Collection is missing the total_staked attribute")]
+    MissingCollectionStats,
+    #[msg("Arithmetic overflow")]
+    Overflow,
 }

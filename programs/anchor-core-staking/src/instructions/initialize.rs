@@ -1,5 +1,5 @@
-use crate::state::Config;
 use crate::error::ErrorCode;
+use crate::state::Config;
 use anchor_lang::prelude::*;
 use anchor_spl::token_interface::{Mint, TokenInterface};
 use mpl_core::accounts::BaseCollectionV1;

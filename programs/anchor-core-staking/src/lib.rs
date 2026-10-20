@@ -4,6 +4,7 @@ pub mod constants;
 pub mod error;
 pub mod instructions;
 pub mod state;
+pub mod utils;
 
 use anchor_lang::prelude::*;
 
@@ -17,11 +18,19 @@ declare_id!("FkP21JjeMc9gcq9iBQBHfLocaLsxCYGLg4jgwin6pBwG");
 pub mod anchor_core_staking {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>, rewards_bps: u16, freeze_period: u16) -> Result<()> {
+    pub fn initialize(
+        ctx: Context<Initialize>,
+        rewards_bps: u16,
+        freeze_period: u16,
+    ) -> Result<()> {
         initialize::handler(ctx, rewards_bps, freeze_period)
     }
 
-    pub fn create_collection(ctx: Context<CreateCollection>, name: String, uri: String) -> Result<()> {
+    pub fn create_collection(
+        ctx: Context<CreateCollection>,
+        name: String,
+        uri: String,
+    ) -> Result<()> {
         create_collection::handler(ctx, name, uri)
     }
 
@@ -37,4 +46,23 @@ pub mod anchor_core_staking {
         unstake::handler(ctx)
     }
 
+    pub fn claim_rewards(ctx: Context<ClaimRewards>) -> Result<()> {
+        claim_rewards::handler(ctx)
+    }
+
+    pub fn burn_staked_nft(ctx: Context<BurnStakedNft>) -> Result<()> {
+        burn_staked_nft::handler(ctx)
+    }
+
+    pub fn init_oracle(ctx: Context<InitOracle>) -> Result<()> {
+        init_oracle::handler(ctx)
+    }
+
+    pub fn update_oracle(ctx: Context<UpdateOracle>) -> Result<()> {
+        update_oracle::handler(ctx)
+    }
+
+    pub fn transfer_nft(ctx: Context<TransferNft>) -> Result<()> {
+        transfer_nft::handler(ctx)
+    }
 }
